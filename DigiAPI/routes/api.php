@@ -18,4 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('kitabs', 'KitabsController@index');
-Route::get('kitabs/kategori','KitabsController@kategori');
+Route::get('kitabs/download/{link}', function($link){
+    $file= public_path(). "/kitab_file/".$link.".pdf";
+
+    $headers =  [
+                    'Content-Type' => 'application/pdf',
+                ];
+
+    return response()->download($file, $link.'.pdf', $headers);
+            });

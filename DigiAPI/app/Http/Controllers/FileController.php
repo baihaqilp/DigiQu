@@ -98,7 +98,7 @@ class FileController extends Controller
         $kitab = $request->file('kitab');
  
       	        // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload_sampul = public_path('kitab_file\sampul');
+        $tujuan_upload_sampul = public_path('kitab_file/sampul');
         $tujuan_upload_kitab = public_path('kitab_file');
  
                 // upload file
@@ -111,8 +111,8 @@ class FileController extends Controller
 
         $kitabs->kategori = request('kategori');
         $kitabs->judul_kitab = request('judul');
-        $kitabs->sampul = $tujuan_upload_sampul.$sampul->getClientOriginalName();
-        $kitabs->link = $tujuan_upload_kitab.$kitab->getClientOriginalName();
+        $kitabs->sampul =$sampul->getClientOriginalName();
+        $kitabs->link = $kitab->getClientOriginalName();
         
         $kitabs->save();
         return view('admin/admin_template');
