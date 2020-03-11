@@ -64,6 +64,11 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'kitab_upload' => [
+            'driver' => 'local',
+            'root' => public_path().'/kitab_file',
+        ],
+
     ],
 
 ];

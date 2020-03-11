@@ -1,0 +1,2 @@
+rootProject.name='DigiQuApps'
+include ':app'

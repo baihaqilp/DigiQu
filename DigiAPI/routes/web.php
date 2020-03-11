@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('admin', function () {
+    return view('admin/admin_template');
+});
+Route::get('upload/kitab', 'KitabsController@IndexUpload');
+Route::post('upload/kitab/proses', 'FileController@upload_kitab');
